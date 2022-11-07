@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hii</title>
+</head>
+<body>
+<script>
+  class QuadraticEquation {
+    a;
+    b;
+    c;
+
+    constructor(a,b,c) {
+      this.a = a;
+      this.b = b;
+      this.c = c;
+    }
+
+    getA() {
+      return this.a
+    }
+
+    setA(value) {
+      this.a = value
+    }
+
+    getB() {
+      return this.b
+    }
+
+    setB(value) {
+      this.b = value
+    }
+
+    getC() {
+      return this.c
+    }
+
+    setC(value) {
+      this.c = value
+    }
+
+    getDiscriminant(){
+      let delta = this.b**2 - (4*this.a *this.c);
+      return delta;
+    }
+
+    getRoot1(){
+      let x = -this.b/(2*this.a);
+      return x
+    }
+
+    getRoo2(){
+      let x1 = (-this.b + Math.pow(this.getDiscriminant(), 0.5))/(2*this.a);
+      let x2 = (-this.b - Math.pow(this.getDiscriminant(), 0.5))/(2*this.a);
+      return [x1,x2]
+    }
+  }
+
+  let quadraticEquation = new QuadraticEquation();
+  quadraticEquation.a = +prompt('Enter a');
+  quadraticEquation.b = +prompt('Enter b');
+  quadraticEquation.c = +prompt('Enter c');
+  let discriminant = quadraticEquation.getDiscriminant();
+    console.log('delta ' + discriminant)
+  if(discriminant < 0){
+    console.log('The equation has no roots')
+  } else if(discriminant = 0){
+    console.log(quadraticEquation.getRoot1())
+  } else {
+    console.log(quadraticEquation.getRoo2())
+  }
+
+</script>
+</body>
+</html>
