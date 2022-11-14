@@ -16,7 +16,7 @@ export class QuanLy {
 
     static deleteD(nCode: number): void {
         this.list.map((obj, index) => {
-            obj.nCode === nCode ? this.list.splice(index, 1) : false;
+            obj.nId === nCode ? this.list.splice(index, 1) : false;
         })
         // let flag = 1
         // this.list.map((obj, index) => {
@@ -29,9 +29,9 @@ export class QuanLy {
 
     static editD(nCode1: number, nCode2: number): void {
         for (let i = 0; i < this.list.length; i++) {
-            if (this.list[i].nCode === nCode1) {
+            if (this.list[i].nId === nCode1) {
                 for (let j = 0; j < this.list.length; j++) {
-                    if (nCode2 == this.list[j].nCode) {
+                    if (nCode2 == this.list[j].nId) {
                         this.list[i] = this.list[j]
                     }
                 }
@@ -40,7 +40,7 @@ export class QuanLy {
     }
 
     static findD(xxx: any): void {
-        this.list.filter(obj => obj.nCode === xxx).forEach(obj => console.table(obj)); //Tìm theo mã tài liệu
+        this.list.filter(obj => obj.nId === xxx).forEach(obj => console.table(obj)); //Tìm theo mã tài liệu
         this.list.filter(obj => obj.Category === xxx).forEach(obj => console.table(obj)) //Tìm theo thể loại
 
     }

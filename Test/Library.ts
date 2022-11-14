@@ -1,23 +1,23 @@
 export class Library {
-     _nCode!: number;
+     _nId!: number;
     private _imprint!: string;
     private _nRelease!: number;
      _Category!: string;
 
 
     constructor(nCode: number, imprint: string, nRelease: number, Category: string) {
-        this._nCode = nCode;
+        this._nId = nCode;
         this._imprint = imprint;
         this._nRelease = nRelease;
         this._Category = Category;
     }
 
-    get nCode(): number {
-        return this._nCode;
+    get nId(): number {
+        return this._nId;
     }
 
-    set nCode(value: number) {
-        this._nCode = value;
+    set nId(value: number) {
+        this._nId = value;
     }
 
     get imprint(): string {
