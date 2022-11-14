@@ -4,8 +4,9 @@ export class Magazine extends Library{
     private _nIssue!: number;
     private _mIssue!: number;
 
-    constructor(nCode: number, imprint: string, nRelease: number, nIssue: number, mIssue: number) {
-        super(nCode, imprint, nRelease);
+
+    constructor(nCode: number, imprint: string, nRelease: number, Category: string, nIssue: number, mIssue: number) {
+        super(nCode, imprint, nRelease, Category);
         this._nIssue = nIssue;
         this._mIssue = mIssue;
     }

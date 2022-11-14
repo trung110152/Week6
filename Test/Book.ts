@@ -4,8 +4,8 @@ export class Book extends Library{
      private _aName!: string;
      private _nPage!: number;
 
-     constructor(nCode: number, imprint: string, nRelease: number, aName: string, nPage: number) {
-  super(nCode, imprint, nRelease);
+     constructor(nCode: number, imprint: string, nRelease: number,Category:string, aName: string, nPage: number) {
+  super(nCode, imprint, nRelease, Category);
   this._aName = aName;
   this._nPage = nPage;
  }

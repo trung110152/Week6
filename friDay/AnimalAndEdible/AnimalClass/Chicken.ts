@@ -1,5 +1,5 @@
 import {Animal} from "./Animal";
-import {Edible} from "./Edible";
+import {Edible} from "../InterfaceEdible/Edible";
 
 export class Chicken extends Animal implements Edible{
     makeSound(): string {

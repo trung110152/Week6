@@ -1,14 +1,16 @@
 export class Library {
-    public _nCode!: number;
+     _nCode!: number;
     private _imprint!: string;
     private _nRelease!: number;
+     _Category!: string;
 
-    constructor(nCode: number, imprint: string, nRelease: number) {
+
+    constructor(nCode: number, imprint: string, nRelease: number, Category: string) {
         this._nCode = nCode;
         this._imprint = imprint;
         this._nRelease = nRelease;
+        this._Category = Category;
     }
-
 
     get nCode(): number {
         return this._nCode;
@@ -32,5 +34,13 @@ export class Library {
 
     set nRelease(value: number) {
         this._nRelease = value;
+    }
+
+    get Category(): string {
+        return this._Category;
+    }
+
+    set Category(value: string) {
+        this._Category = value;
     }
 }

@@ -1,6 +1,7 @@
 import {Shape} from "./Shape";
+import {Resizeable} from "./Resizeable";
 
-export class Circle extends Shape {
+export class Circle extends Shape implements Resizeable {
     radius: number;
 
     constructor(name: string, radius: number) {
@@ -14,5 +15,8 @@ export class Circle extends Shape {
 
     calculatePerimeter(): number {
         return Math.PI * this.radius * 2;
+    }
+
+    resize() {
     }
 }

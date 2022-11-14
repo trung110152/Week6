@@ -1,41 +1,48 @@
 import {News} from "./News";
 import {Magazine} from "./Magazine";
 import {Book} from "./Book";
-
 import {Library} from "./Library";
 
 export class QuanLy {
     static list: Library[] = [];
 
-    static add(o: Library): void {
-        QuanLy.list.push(o);
+    static add(obj: Library): void {
+        QuanLy.list.push(obj);
     }
 
     static display(): void {
-        for (const o of QuanLy.list) {
-            console.table(o);
-        }
+        console.table(this.list)
     }
 
     static deleteD(nCode: number): void {
-        for (let i = 0; i < QuanLy.list.length; i++) {
-            if (QuanLy.list[i].nCode === nCode) {
-                QuanLy.list.splice(i, 1);
+        this.list.map((obj, index) => {
+            obj.nCode === nCode ? this.list.splice(index, 1) : false;
+        })
+        // let flag = 1
+        // this.list.map((obj, index) => {
+        //         flag++;
+        //         obj.nCode === nCode ? this.list.splice(index, 1) : flag--;
+        //     }
+        // )
+        // flag === 1 ? console.log('can not find') : console.log('deleted %d', nCode)
+    }
+
+    static editD(nCode1: number, nCode2: number): void {
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i].nCode === nCode1) {
+                for (let j = 0; j < this.list.length; j++) {
+                    if (nCode2 == this.list[j].nCode) {
+                        this.list[i] = this.list[j]
+                    }
+                }
             }
         }
     }
 
-    static editD(nCode: number, dEdit: Library): void {
-        for (let i = 0; i < QuanLy.list.length; i++) {
-            if (QuanLy.list[i].nCode === nCode) {
-                QuanLy.list[i] = dEdit;
-            }
-        }
-    }
+    static findD(xxx: any): void {
+        this.list.filter(obj => obj.nCode === xxx).forEach(obj => console.table(obj)); //Tìm theo mã tài liệu
+        this.list.filter(obj => obj.Category === xxx).forEach(obj => console.table(obj)) //Tìm theo thể loại
 
-    static findD(nCode: number ): void {
-        this.list.filter(value => value._nCode === nCode).forEach( value => {
-            console.log(value)})
     }
 }
 

@@ -3,8 +3,9 @@ import {Library} from "./Library";
 export class News extends Library {
     private _dIssue!: number;
 
-    constructor(nCode: number, imprint: string, nRelease: number, dIssue: number) {
-        super(nCode, imprint, nRelease);
+
+    constructor(nCode: number, imprint: string, nRelease: number, Category: string, dIssue: number) {
+        super(nCode, imprint, nRelease, Category);
         this._dIssue = dIssue;
     }
 
